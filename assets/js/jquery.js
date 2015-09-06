@@ -13,8 +13,10 @@
 // Include your main.js file in your HTML file.
 // > Why does it have to be after including jQuery?
 // > Verify that both files loaded in your browser tools.
-
-
+//
+// References:
+// * http://api.jquery.com/
+// * http://oscarotero.com/jquery/
 //
 // Example 5: window.addEventListener("load")
 //
@@ -166,3 +168,37 @@ $("ul").on("click", "li", function() {
          .appendTo($ul);
 });
 
+// KEY CONCEPT:  Event bubbling vs. capturing
+// * If events BUBBLE:
+//    we first see the event (if set) for the innermost element
+//    and then we "bubble up" to any events that were set on the parent element(s).
+//    --- DEFAULT EVENT BEHAVIOR
+// * If events CAPTURE (aka "trickle"):
+//    we first see the event (if set) for the outermost element
+//    and then we trickle down to any events that were set on the child element(s).
+//    --- Set by using: addEventListener("type", function () {}, true)
+//    --- Not available in IE<9
+//
+
+//
+// KEY CONCEPT: Triggering events in code
+//
+// $(element).trigger("click");
+// $(element).click(); // without an argument!
+//
+
+//
+// KEY CONCEPT: Custom events
+//
+// An event on a DOM element.
+// Can be on any element, named anything, and have any parameters you want.
+// Use to coordinate behaviors in your code, or to respond to actions in a library.
+//
+
+//
+// KEY CONCEPT: Event Parameters
+// $('body').on("completeTask", function (e, task){
+//   console.log("i completed the following task: " + task);
+// });
+// $('body').trigger("completeTask", "Lecture for class # 5");
+//
