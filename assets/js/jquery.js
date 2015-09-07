@@ -146,11 +146,12 @@ $(window).on("resize", function() {
 //   });
 // }
 
-$("img").click(function() {
-  var $li = $(this).parent();
-  var $ul = $li.parent();
-  $li.remove().appendTo($ul);
-});
+// jQuery Version 1:
+// $("img").click(function() {
+//   var $li = $(this).parent();
+//   var $ul = $li.parent();
+//   $li.remove().appendTo($ul);
+// });
 
 // on()
 //
@@ -158,15 +159,35 @@ $("img").click(function() {
 //
 // Usage: $(ancestor).on(event, decendentSelector, handler);
 //
+// jQuery Version 2:
+// $("ul").on("click", "li", function() {
+//   $ul = $(this).parent();
+//   $(this).remove()
+//          .appendTo($ul);
+// });
+
+//
 // Task: Hide all the lab images on page load.
 //       When a button is clicked, show the corresponding list item (and only that list item)
 //
+// Modify HTML:
+// - add data element to buttons: data-lab="lab1"
+// - add same class names to lab li elements: class="lab1"
+// $(document).ready(function () {
+//   $('#lab-images li').hide();
 
-$("ul").on("click", "li", function() {
-  $ul = $(this).parent();
-  $(this).remove()
-         .appendTo($ul);
-});
+//   $('#buttons button').click(function (evt) {
+//     evt.preventDefault();
+
+//     var labClass = $(this).data('lab');
+//     // What if we type: $(labClass).show();
+//     $('#lab-images li').hide();
+//     $('.' + labClass).show();
+//   });
+// });
+
+
+// BONUS CONCEPT: data attributes
 
 // KEY CONCEPT:  Event bubbling vs. capturing
 // * If events BUBBLE:
