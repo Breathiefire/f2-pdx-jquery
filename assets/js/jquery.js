@@ -73,12 +73,12 @@ $(window).on("load", function() {
 //   }
 // });
 
-$(window).on("resize", function() {
-  var imgWidth = $(window).width() / 2.0;
-  var imgHeight = imgWidth * 0.8;
-  $("li img").width(imgWidth)
-             .height(imgHeight);
-});
+// $(window).on("resize", function() {
+//   var imgWidth = $(window).width() / 2.0;
+//   var imgHeight = imgWidth * 0.8;
+//   $("li img").width(imgWidth)
+//              .height(imgHeight);
+// });
 
 //
 // $(selector).click(handler) = $(selector).on('click', handler);
@@ -88,38 +88,6 @@ $(window).on("resize", function() {
 // Inside an event handler, this is the element the event targeted. It’s the same as event.target.
 //
 // $(this) creates a jQuery object that wraps event.target.
-
-
-//
-// Example 6: Handling the resize event
-//
-//            resize = An event on the window object.
-//            Signifies the user changed the viewing dimensions.
-//            Use it to implement "responsive design": adjust layout, styling, and element visibility.
-//
-// Task: Make the images half the window width each time the resize event triggers.
-//
-// You’ll need: window.innerWidth and window.innerHeight
-//
-
-// window.addEventListener("resize", function () {
-//   var imgTags = document.getElementsByTagName("img");
-//   var previousStyle;
-//   var imgWidth = window.innerWidth / 2;
-//   var imgHeight = imgWidth * 0.8;
-//   for(var i = 0; i < imgTags.length; i++) {
-//     previousStyle = imgTags[i].getAttribute("style") || "";
-//     var newStyle = previousStyle + " height:" + imgHeight + "px;width:" + imgWidth + "px;";
-//     imgTags[i].setAttribute("style", newStyle);
-//   }
-// });
-
-$(window).on("resize", function() {
-  var imgWidth = $(window).width() / 4.0;
-  var imgHeight = imgWidth * 0.8;
-  $("li img").width(imgWidth)
-             .height(imgHeight);
-});
 
 //
 // Example 7: Handling a click event
@@ -166,6 +134,8 @@ $(window).on("resize", function() {
 //          .appendTo($ul);
 // });
 
+//
+// Example 8: $().show() and $().hide()
 //
 // Task: Hide all the lab images on page load.
 //       When a button is clicked, show the corresponding list item (and only that list item)

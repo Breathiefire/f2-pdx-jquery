@@ -3,9 +3,7 @@
 //
 // Vanilla JS Task:
 //        Using JavaScript, add a descriptive page title.
-var titleTags = document.getElementsByTagName("title");
-var title = titleTags[0]; //titleTags is an array
-title.text = "F2: JavaScript | Class Summary";
+
 
 //
 // Example 2: getElementById()
@@ -69,6 +67,10 @@ title.text = "F2: JavaScript | Class Summary";
 //
 // jQuery Task:
 //        Repeat the previous task, this time using jQuery.
+//
+// You'll need: $(window).on()
+//              $(window).width()
+//              $(element).height(desiredHeight)
 
 
 //
